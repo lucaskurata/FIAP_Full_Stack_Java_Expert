@@ -22,6 +22,8 @@ public class DescontoCupom {
 			System.out.println("O cupom é inválido... Valor a ser pago: R$" + valor);
 		}
 
+		leitor.close();
+		
 	}
 
 }
