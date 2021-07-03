@@ -57,22 +57,22 @@ public class TeacherHelp {
 			case 3:
 				
 				switch(gerador.nextInt(7)) {
-				case 1:
+				case 0:
 					System.out.println("Você é um professor incrível!");
 					break;
-				case 2:
+				case 1:
 					System.out.println("Que o seu dia seja produtivo!");
 					break;
-				case 3:
+				case 2:
 					System.out.println("Que os seus alunos notem a paixão com que você ensina!");
 					break;
-				case 4:
+				case 3:
 					System.out.println("Seu trabalho ajuda a fazer do mundo um lugar melhor!");
 					break;
-				case 5:
+				case 4:
 					System.out.println("Quem ensina com o coração cria um tesouro para a vida toda!");
 					break;
-				case 6:
+				case 5:
 					System.out.println("Obrigado por se colocar à disposição do saber!");
 					break;
 					
