@@ -1,25 +1,25 @@
 package br.com.fiap.investimento.reports;
 
-public class InstitucionalReport implements Report{
+public class InstitucionalReport implements Report {
 
 	@Override
 	public void print(String redeImpressora) {
-		System.out.println("Enviando para impressora");
+		System.out.println("Inst print");
 	}
 
 	@Override
 	public void pdf() {
-		System.out.println("Gerando PDF");
+		System.out.println("Inst pdf");
 	}
 
 	@Override
 	public void excel() {
-		System.out.println("Gerando excel");
+		System.out.println("Inst excel");
 	}
 
 	@Override
 	public void txt() {
-		System.out.println("Gerando txt");
+		System.out.println("Inst txt");
 	}
 	
 }

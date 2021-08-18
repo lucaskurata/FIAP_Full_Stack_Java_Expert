@@ -3,36 +3,36 @@ package br.com.fiap.investimento.model;
 import java.util.Date;
 
 public abstract class Investidor {
-	
-	private int investidoId;
+
+	private int investidorId;
 	private String nome;
 	private double patrimonio;
 	private String perfilRisco;
 	private Date dataAberturaConta;
 	
+
 	public Investidor() {
-		super();
 	}
-	
+
 	public Investidor(String nome, double patrimonio) {
 		super();
 		this.nome = nome;
 		this.patrimonio = patrimonio;
 	}
 
-	public Investidor(int investidoId, String nome, double patrimonio) {
+	public Investidor(int investidorId, String nome, double patrimonio) {
 		super();
-		this.investidoId = investidoId;
+		this.investidorId = investidorId;
 		this.nome = nome;
 		this.patrimonio = patrimonio;
 	}
 
-	public int getInvestidoId() {
-		return investidoId;
+	public int getInvestidorId() {
+		return investidorId;
 	}
 
-	public void setInvestidoId(int investidoId) {
-		this.investidoId = investidoId;
+	public void setInvestidorId(int investidorId) {
+		this.investidorId = investidorId;
 	}
 
 	public String getNome() {
@@ -66,5 +66,14 @@ public abstract class Investidor {
 	public void setDataAberturaConta(Date dataAberturaConta) {
 		this.dataAberturaConta = dataAberturaConta;
 	}
+
+	@Override
+	public String toString() {
+		return "Investidor [investidorId=" + investidorId + ", nome=" + nome + ", patrimonio=" + patrimonio
+				+ ", perfilRisco=" + perfilRisco + ", dataAberturaConta=" + dataAberturaConta + "]";
+	}
+	
+	
+	
 	
 }
