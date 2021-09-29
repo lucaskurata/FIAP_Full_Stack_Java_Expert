@@ -1,0 +1,38 @@
+---Exercícios de Join
+
+--- 1. Trazer todos os funcionários listando código, nome, data nascimento e nome do departamento
+SELECT
+    F.CD_FUNCIONARIO,
+    F.NM_FUNCIONARIO,
+    F.DT_NASCIMENTO,
+    D.NM_DEPTO
+    FROM DB_FUNCIONARIO F
+    INNER JOIN DB_DEPTO D
+    ON F.CD_DEPTO = D.CD_DEPTO;
+
+--- 2. Selecionar todos os funcionários listando, código, nome e endereço completo (independente se o funcionário possui endereço cadastrado)
+SELECT * FROM DB_FUNCIONARIO;
+SELECT * FROM DB_END_FUNC;
+SELECT * FROM DB_LOGRADOURO;
+SELECT * FROM DB_BAIRRO;
+SELECT * FROM DB_CIDADE;
+SELECT * FROM DB_ESTADO;
+
+SELECT
+    F.CD_FUNCIONARIO,
+    F.NM_FUNCIONARIO,
+    L.NM_LOGRADOURO AS ENDEREÇO,  
+    B.NM_BAIRRO AS BAIRRO,
+    C.NM_CIDADE AS CIDADE,
+    EST.NM_ESTADO AS ESTADO
+    FROM DB_FUNCIONARIO F
+    LEFT JOIN DB_END_FUNC E
+        ON F.CD_FUNCIONARIO = E.CD_FUNCIONARIO
+    LEFT JOIN DB_LOGRADOURO L
+        ON E.CD_LOGRADOURO = L.CD_LOGRADOURO
+    LEFT JOIN DB_BAIRRO B
+        ON L.CD_BAIRRO = B.CD_BAIRRO
+    LEFT JOIN DB_CIDADE C
+        ON B.CD_CIDADE = C.CD_CIDADE
+    LEFT JOIN DB_ESTADO EST
+        ON C.SG_ESTADO = EST.SG_ESTADO;

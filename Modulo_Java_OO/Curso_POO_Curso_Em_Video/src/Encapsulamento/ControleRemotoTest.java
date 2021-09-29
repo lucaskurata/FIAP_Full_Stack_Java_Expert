@@ -4,7 +4,7 @@ public class ControleRemotoTest {
 
 	public static void main(String[] args) {
 
-		ControleRemoto c = new ControleRemoto(0, false, false);
+		ControleRemoto c = new ControleRemoto();
 		
 		c.ligar();
 		

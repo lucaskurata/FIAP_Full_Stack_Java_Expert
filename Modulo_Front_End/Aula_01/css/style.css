@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital@0;1&family=STIX+Two+Text:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital@0;1&family=STIX+Two+Text:ital,wght@0,400;1,700&display=swap');
+
+/* seletor = elemento que será formatado
+propriedade = o que queremos mudar no seletor
+valor = como essa propriedade deve ficar = regra */
+
+h1{
+    color: rgb(255, 190, 11);
+    font-size: 50px;
+    font-family: 'STIX Two Text', serif;
+}
+
+h2{
+    color: rgb(86, 168, 10);
+    font-family: 'STIX Two Text', serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+}
+
+p, figcaption{
+    font-family: 'Andada Pro', serif;
+    text-align: justify;
+}
+
+figcaption{
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(151, 5, 5);
+}
+
+a:hover{
+    color: rgb(255, 153, 153);
+}
+
+img{
+    width: 300px;
+    height: 200px;
+}
+
+figure{
+    text-align: center;
+}

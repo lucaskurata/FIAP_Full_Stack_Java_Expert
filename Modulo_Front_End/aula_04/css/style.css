@@ -1,0 +1,20 @@
+.fundo_menu{
+    background-color: rgb(248, 141, 54);
+}
+
+.fundo{
+    background-color: rgb(255, 220, 191);
+}
+
+.icone{
+    color: rgb(247, 56, 56);
+}
+
+table{
+    background-color: rgb(248, 141, 54);
+}
+
+/* Alterando a altura das imagens do carousel */
+.carousel-item{
+    height: 100vh;
+}
