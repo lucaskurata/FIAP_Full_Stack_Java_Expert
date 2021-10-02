@@ -15,12 +15,16 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "MARCA")
 public class MarcaModel {
 	
     @Id
     @Column(name = "ID_MARCA")
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idMarca")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MARCA_SEQ")
     @SequenceGenerator(name = "MARCA_SEQ", initialValue = 1, allocationSize = 1)
     private int idMarca;

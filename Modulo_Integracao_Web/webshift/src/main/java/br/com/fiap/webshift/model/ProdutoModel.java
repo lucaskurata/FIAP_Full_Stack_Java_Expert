@@ -1,6 +1,9 @@
 package br.com.fiap.webshift.model;
 
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -28,23 +33,26 @@ public class ProdutoModel {
     @Column(name = "ID_PRODUTO")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUTO_SEQ")
     @SequenceGenerator(name = "PRODUTO_SEQ", initialValue = 1, allocationSize = 1)
-    
     private int id;
+    
     @Column(name = "NOME")
     @NotNull(message = "Nome obrigatório")
-    @Size(min = 2, max = 50, message = "NOME deve ser entre 2 e 50 caracteres")
-    
+    @Size(min = 2, max = 50, message = "NOME deve ser entre 2 e 50 caracteres")    
     private String nome;
+    
     @Column(name = "SKU")
     @NotNull(message = "Sku obrigatório")
-    @Size(min = 2, max = 40, message = "SKU deve ser entre 2 e 50 caracteres")
-    
+    @Size(min = 2, max = 40, message = "SKU deve ser entre 2 e 50 caracteres")    
     private String sku;
+    
+    @Column(name = "FOTO")
+    private String foto;
+    
     @Column(name = "DESCRICAO")
     @NotNull(message = "Descrição obrigatório")
-    @Size(min = 10, max = 400, message = "DESCRIÇÃO deve ser entre 10 e 400 caracteres")
-    
+    @Size(min = 10, max = 400, message = "DESCRIÇÃO deve ser entre 10 e 400 caracteres")    
     private String descricao;
+    
     @Column(name = "PRECO")
     @DecimalMin(value = "0.01", message = "PRECO deve ser acima de 0.01")
     
@@ -69,6 +77,12 @@ public class ProdutoModel {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_MARCA", nullable = false)
     private MarcaModel marca;
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable( name = "PRODUTO_LOJA" ,
+    joinColumns = @JoinColumn ( name = "ID_PRODUTO" , referencedColumnName = "ID_PRODUTO") ,
+    inverseJoinColumns = @JoinColumn (name = "ID_LOJA" , referencedColumnName = "ID_LOJA") )
+    private List<LojaModel> lojas;
 
 	public int getId() {
 		return id;
@@ -92,6 +106,22 @@ public class ProdutoModel {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public List<LojaModel> getLojas() {
+		return lojas;
+	}
+
+	public void setLojas(List<LojaModel> lojas) {
+		this.lojas = lojas;
 	}
 
 	public String getDescricao() {
